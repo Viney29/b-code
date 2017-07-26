@@ -1,0 +1,130 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin font-size($font-size, $line-height: auto) {
+    font-size: $font-size;
+    font-size: ($font-size / $base-font-size) * 1rem;
+
+    @if $line-height == auto {
+        line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+    }
+
+    @else {
+
+        @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+            line-height: $line-height;
+        }
+
+        @elseif ($line-height != none and $line-height != false) {
+            @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`.";
+        }
+
+    }
+
+}
+
+//@mixin size($w, $h) {
+//	width: $w;
+//	height: $h;
+//}
+
+@function parseInt($n) { /* 2 */
+    @return $n / ($n * 0 + 1);
+}
+
+@mixin rem($property, $values) {
+    $px : (); /* 3 */
+    $rem: (); /* 3 */
+
+  @each $value in $values { /* 4 */
+
+    @if $value == 0px or $value == auto { /* 5 */
+      $px : append($px , $value);
+      $rem: append($rem, $value);
+    }
+
+    @else {
+      $unit: unit($value);    /* 6 */
+      $val: parseInt($value); /* 6 */
+
+      @if $unit == "px" {  /* 7 */
+        $px : append($px,  $value);
+        $rem: append($rem, ($val / 16 + rem));
+      }
+
+      @if $unit == "rem" { /* 7 */
+        $px : append($px,  ($val * 16 + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+
+  @if $px == $rem {     /* 8 */
+    #{$property}: $px;  /* 9 */
+  } @else {
+    #{$property}: $px;  /* 9 */
+    #{$property}: $rem; /* 9 */
+  }
+}
+
+
+
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        @content;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+@keyframes change {
+  0%, 12%, 100%   {transform:translateY(0);}
+  17%,29%  {transform:translateY(-25%);}
+  34%,46%  {transform:translateY(-50%);}
+  51%,63%  {transform:translateY(-75%);}
+  68%,80%  {transform:translateY(-50%);}
+  85%,97%  {transform:translateY(-25%);}
+}
+@mixin triangle($size: border-width, $direction: up, $color: border-color) {
+    width: 0;
+    height: 0;
+    position: absolute;
+    content: "";
+    z-index: 9;
+    @if $direction == "up" {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+    }
+    @else if $direction == "down" {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+    }
+    @else if $direction == "right" {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+    }
+    @else if $direction == "left" {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+    }
+}

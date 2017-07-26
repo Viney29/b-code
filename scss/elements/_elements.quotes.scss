@@ -1,0 +1,31 @@
+blockquote {
+    quotes: "“" "”" "‘" "’";;
+	font-size:28px;
+	font-weight: 500;
+	margin:20px 0;
+	text-align:center;
+	font-family:$al-l;
+	color:$color-slateblack;
+	font-style: italic;
+
+	@include bp(mobile-p-max){
+		font-size: 20px;
+		line-height: 28px;
+	}
+
+	&:before {
+		content: open-quote;
+	}
+
+	&:after {
+		content: close-quote;
+	}
+}
+
+.quotes{
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: top;
+    color:#9c9c9c;
+}

@@ -1,0 +1,64 @@
+
+$font-path: '../fonts' !default;
+
+@font-face {
+	font-family: 'alrightsans-bold';
+	src: url('#{$font-path}/alrightsans-bold.eot');
+	src: local('☺'), 
+		url('#{$font-path}/alrightsans-bold.woff') format('woff'),
+	 	url('#{$font-path}/alrightsans-bold.ttf') format('truetype'),
+	 	url('#{$font-path}/alrightsans-bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'alrightsans-medium';
+	src: url('#{$font-path}/alrightsans-medium.eot');
+	src: local('☺'), 
+		url('#{$font-path}/alrightsans-medium.woff') format('woff'), 
+		url('#{$font-path}/alrightsans-medium.ttf') format('truetype'),
+		url('#{$font-path}/alrightsans-medium.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'alrightsans-regular';
+	src: url('#{$font-path}/alrightsans-regular.eot');
+	src: local('☺'),
+		 url('#{$font-path}/alrightsans-regular.woff') format('woff'),
+		 url('#{$font-path}/alrightsans-regular.ttf') format('truetype'),
+		 url('#{$font-path}/alrightsans-regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'alrightsans-light';
+	src: url('#{$font-path}/alrightsans-light.eot');
+	src: local('☺'), 
+		 url('#{$font-path}/alrightsans-light.woff') format('woff'), 
+		 url('#{$font-path}/alrightsans-light.ttf') format('truetype'), 
+		 url('#{$font-path}/alrightsans-light.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$brand-font: 	'alrightsans-light', sans-serif;
+
+$rb:  			'Roboto', sans-serif;
+
+$al-b:			'alrightsans-bold', sans-serif;
+
+$al-r:			'alrightsans-regular', sans-serif;
+
+$al-m:			'alrightsans-medium', sans-serif;
+
+$al-l:			'alrightsans-light', sans-serif;
+
+$rb-c:			'Roboto Condensed', sans-serif;
+
+$mw:			'Merriweather', serif;
+
+$base-font-type:	$al-r;

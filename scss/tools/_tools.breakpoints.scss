@@ -1,0 +1,54 @@
+@mixin bp($break) {
+
+    @if $break == mobile-large {
+        @media (min-width: $mobile-large) { @content; }
+    }
+
+    @else if $break == mobile-p-max {
+        @media (max-width: $mobile-large - 1) { @content; }
+    }
+
+    @else if $break == mobile-max {
+        @media (max-width: $tablet - 1) { @content; }
+    }
+
+    @else if $break == tablet {
+        @media (min-width: $tablet) { @content; }
+    }
+
+    @else if $break == tab-max {
+        @media (max-width: $tab - 1) { @content; }
+    }
+
+    @else if $break == tab {
+        @media (min-width: $tab) { @content; }
+    }
+
+    @else if $break == tablet-max {
+        @media (max-width: $tablet-large - 1) { @content; }
+    }
+
+    @else if $break == tablet-large {
+        @media (min-width: $tablet-large) { @content; }
+    }
+
+    @else if $break == desktop {
+        @media (min-width: $desktop) { @content; }
+    }
+
+    @else if $break == desktop-medium {
+        @media (min-width: $desktop-medium) { @content; }
+    }
+
+    @else if $break == desktop-medium-max {
+        @media (max-width: $desktop-medium - 1) { @content; }
+    }
+
+    @else if $break == desktop-large {
+        @media (min-width: $desktop-large) { @content; }
+    }
+
+    @else {
+        @warn "Breakpoint mixin supports: xs, sm, md, lg";
+    }
+}

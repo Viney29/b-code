@@ -1,0 +1,24 @@
+
+/*****************************
+--------------------------
+Block-level-style 
+(Header-footer)
+--------------------------
+*****************************/
+ @import "blocks/theme.header";
+ 
+ @import "blocks/theme.footer";
+
+/*****************************
+--------------------------
+Inner-page-style
+--------------------------
+*****************************/
+
+ @import "pages/theme.about";
+
+ @import "pages/theme.error-404";
+
+ @import "pages/theme.home";
+
+

@@ -1,0 +1,66 @@
+h1,h2,h3,h4,h5,h6{
+    padding: 0;
+    margin: 0;
+}
+
+
+h1 {
+    @include font-size(48px, 56px);
+    font-family: $al-l;
+    font-weight: 700;
+}
+
+h2 {
+    @include font-size(28px, 30px);
+    font-family: $al-l;
+    font-weight: 700;
+}   
+
+h3 {
+    @include font-size(24px, 26px);
+    font-family: $al-b;
+    font-weight: 500;
+}
+
+h4 {
+    @include font-size(20px , 22px);
+    font-weight: 500;
+}
+
+h5 {
+    @include font-size(18px , 20px);
+    font-family: $al-l;
+    font-weight: 500;
+}
+
+h6 {
+    @include font-size(16px , 18px);
+    font-weight: 500;
+}
+
+.heading {
+    text-transform: uppercase;
+    margin:50px 0px;
+
+    @include bp(tab-max){
+      font-size: 36px;
+      line-height: 42px;
+      margin: 40px 0px;
+    }
+    @include bp(mobile-p-max){
+      font-size: 30px;
+      line-height: 36px;
+      margin: 25px 0px;
+    }
+}
+
+.sub-heading {
+    font-family: $al-m;
+    font-weight: normal;
+
+    @include bp(mobile-p-max){
+        font-size: 20px;
+        line-height: 24px;
+        margin: 20px 0 !important;
+    }
+}
